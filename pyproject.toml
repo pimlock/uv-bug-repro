@@ -1,0 +1,26 @@
+[project]
+name = "uv-bug-repro"
+version = "0.1.0"
+description = "Minimal reproduction of uv tool install bug"
+dependencies = [
+    "typer>=0.20.0",
+]
+requires-python = ">= 3.10"
+
+[project.optional-dependencies]
+extra1 = [
+    "typer-slim>=0.20.0",
+]
+extra2 = [
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+repro-cli = "uv_bug_repro:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/uv_bug_repro"]
