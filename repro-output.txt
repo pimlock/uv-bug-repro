@@ -1,0 +1,202 @@
+=== Environment ===
+uv 0.9.26 (ee4f00362 2026-01-15)
+Darwin H7X5XKWV34 25.2.0 Darwin Kernel Version 25.2.0: Tue Nov 18 21:09:56 PST 2025; root:xnu-12377.61.12~1/RELEASE_ARM64_T6041 arm64
+
+=== Step 1: uv sync --verbose ===
+DEBUG uv 0.9.26 (ee4f00362 2026-01-15)
+DEBUG Acquired shared lock for `~/.cache/uv`
+DEBUG Found project root: `~/dev/tries/2026-01-21-uv-repro`
+DEBUG No workspace root found, using project root
+DEBUG Acquired exclusive lock for `~/dev/tries/2026-01-21-uv-repro`
+DEBUG No Python version file found in workspace: ~/dev/tries/2026-01-21-uv-repro
+DEBUG Using Python request `>=3.10` from `requires-python` metadata
+DEBUG Checking for Python environment at: `.venv`
+DEBUG Using request timeout of 30s
+DEBUG Searching for Python >=3.10 in managed installations or search path
+DEBUG Searching for managed installations at `~/.local/share/uv/python`
+DEBUG Found managed installation `cpython-3.14.0-macos-aarch64-none`
+DEBUG Found `cpython-3.14.0-macos-aarch64-none` at `~/.local/share/uv/python/cpython-3.14.0-macos-aarch64-none/bin/python3.14` (managed installations)
+Using CPython 3.14.0
+Creating virtual environment at: .venv
+DEBUG Assessing Python executable as base candidate: ~/.local/share/uv/python/cpython-3.14.0-macos-aarch64-none/bin/python3.14
+DEBUG Using base executable for virtual environment: ~/.local/share/uv/python/cpython-3.14.0-macos-aarch64-none/bin/python3.14
+DEBUG Released lock at `/var/folders/w8/q651c06s5q5dc_zqw19_98mw0000gp/T/uv-224678e4d39cbb53.lock`
+DEBUG Acquired exclusive lock for `.venv`
+DEBUG Using request timeout of 30s
+DEBUG Found static `pyproject.toml` for: uv-bug-repro @ file://~/dev/tries/2026-01-21-uv-repro
+DEBUG No workspace root found, using project root
+DEBUG Solving with installed Python version: 3.14
+DEBUG Solving with target Python version: >=3.10
+DEBUG Adding direct dependency: uv-bug-repro[extra1]*
+DEBUG Adding direct dependency: uv-bug-repro[extra2]*
+DEBUG Searching for a compatible version of uv-bug-repro @ file://~/dev/tries/2026-01-21-uv-repro (*)
+DEBUG Adding direct dependency: uv-bug-repro==0.1.0
+DEBUG Adding direct dependency: uv-bug-repro[extra1]==0.1.0
+DEBUG Searching for a compatible version of uv-bug-repro @ file://~/dev/tries/2026-01-21-uv-repro (==0.1.0)
+DEBUG Adding direct dependency: typer>=0.20.0
+DEBUG Searching for a compatible version of uv-bug-repro @ file://~/dev/tries/2026-01-21-uv-repro (*)
+DEBUG Adding direct dependency: uv-bug-repro==0.1.0
+DEBUG Adding direct dependency: uv-bug-repro[extra2]==0.1.0
+DEBUG Searching for a compatible version of uv-bug-repro @ file://~/dev/tries/2026-01-21-uv-repro (==0.1.0)
+DEBUG Adding direct dependency: typer-slim>=0.20.0
+DEBUG Searching for a compatible version of uv-bug-repro @ file://~/dev/tries/2026-01-21-uv-repro (==0.1.0)
+DEBUG Adding direct dependency: rich>=13.0.0
+DEBUG Found fresh response for: https://pypi.org/simple/typer-slim/
+DEBUG Found fresh response for: https://pypi.org/simple/typer/
+DEBUG Found fresh response for: https://pypi.org/simple/rich/
+DEBUG Searching for a compatible version of typer (>=0.20.0)
+DEBUG Selecting: typer==0.21.1 [compatible] (typer-0.21.1-py3-none-any.whl)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/c8/0a/4aca634faf693e33004796b6cee0ae2e1dba375a800c16ab8d3eff4bb800/typer_slim-0.21.1-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/a0/1d/d9257dd49ff2ca23ea5f132edf1281a0c4f9de8a762b9ae399b670a59235/typer-0.21.1-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/25/7a/b0178788f8dc6cafce37a212c99565fa1fe7872c70c6c9c1e1a372d9d88f/rich-14.2.0-py3-none-any.whl.metadata
+DEBUG Adding transitive dependency for typer==0.21.1: click>=8.0.0
+DEBUG Adding transitive dependency for typer==0.21.1: rich>=10.11.0
+DEBUG Adding transitive dependency for typer==0.21.1: shellingham>=1.3.0
+DEBUG Adding transitive dependency for typer==0.21.1: typing-extensions>=3.7.4.3
+DEBUG Searching for a compatible version of typer-slim (>=0.20.0)
+DEBUG Selecting: typer-slim==0.21.1 [compatible] (typer_slim-0.21.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for typer-slim==0.21.1: click>=8.0.0
+DEBUG Adding transitive dependency for typer-slim==0.21.1: typing-extensions>=3.7.4.3
+DEBUG Searching for a compatible version of rich (>=13.0.0)
+DEBUG Selecting: rich==14.2.0 [compatible] (rich-14.2.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for rich==14.2.0: markdown-it-py>=2.2.0
+DEBUG Adding transitive dependency for rich==14.2.0: pygments>=2.13.0, <3.0.0
+DEBUG Found fresh response for: https://pypi.org/simple/shellingham/
+DEBUG Found fresh response for: https://pypi.org/simple/click/
+DEBUG Searching for a compatible version of click (>=8.0.0)
+DEBUG Selecting: click==8.3.1 [compatible] (click-8.3.1-py3-none-any.whl)
+DEBUG Found fresh response for: https://pypi.org/simple/markdown-it-py/
+DEBUG Found fresh response for: https://pypi.org/simple/pygments/
+DEBUG Found fresh response for: https://pypi.org/simple/typing-extensions/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/94/54/e7d793b573f298e1c9013b8c4dade17d481164aa517d1d7148619c2cedbf/markdown_it_py-4.0.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/98/78/01c019cdb5d6498122777c1a43056ebb3ebfeef2076d9d026bfe15583b2b/click-8.3.1-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl.metadata
+DEBUG Adding transitive dependency for click==8.3.1: colorama{sys_platform == 'win32'}*
+DEBUG Searching for a compatible version of shellingham (>=1.3.0)
+DEBUG Selecting: shellingham==1.5.4 [compatible] (shellingham-1.5.4-py2.py3-none-any.whl)
+DEBUG Searching for a compatible version of typing-extensions (>=3.7.4.3)
+DEBUG Selecting: typing-extensions==4.15.0 [compatible] (typing_extensions-4.15.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of markdown-it-py (>=2.2.0)
+DEBUG Selecting: markdown-it-py==4.0.0 [compatible] (markdown_it_py-4.0.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for markdown-it-py==4.0.0: mdurl>=0.1, <1.dev0
+DEBUG Searching for a compatible version of pygments (>=2.13.0, <3.0.0)
+DEBUG Selecting: pygments==2.19.2 [compatible] (pygments-2.19.2-py3-none-any.whl)
+DEBUG Found fresh response for: https://pypi.org/simple/mdurl/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://pypi.org/simple/colorama/
+DEBUG Searching for a compatible version of colorama{sys_platform == 'win32'} (*)
+DEBUG Selecting: colorama==0.4.6 [compatible] (colorama-0.4.6-py2.py3-none-any.whl)
+DEBUG Adding transitive dependency for colorama==0.4.6: colorama==0.4.6
+DEBUG Adding transitive dependency for colorama==0.4.6: colorama{sys_platform == 'win32'}==0.4.6
+DEBUG Searching for a compatible version of colorama (==0.4.6)
+DEBUG Selecting: colorama==0.4.6 [compatible] (colorama-0.4.6-py2.py3-none-any.whl)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl.metadata
+DEBUG Searching for a compatible version of colorama{sys_platform == 'win32'} (==0.4.6)
+DEBUG Selecting: colorama==0.4.6 [compatible] (colorama-0.4.6-py2.py3-none-any.whl)
+DEBUG Searching for a compatible version of mdurl (>=0.1, <1.dev0)
+DEBUG Selecting: mdurl==0.1.2 [compatible] (mdurl-0.1.2-py3-none-any.whl)
+DEBUG Tried 11 versions: click 1, colorama 1, markdown-it-py 1, mdurl 1, pygments 1, rich 1, shellingham 1, typer 1, typer-slim 1, typing-extensions 1, uv-bug-repro 1
+DEBUG all marker environments resolution took 0.031s
+Resolved 11 packages in 52ms
+DEBUG Using request timeout of 30s
+DEBUG Computed cache info: Timestamp(SystemTime { tv_sec: 1769022319, tv_nsec: 714323542 }), None, None, {}, {"src": Some(Timestamp(Timestamp(SystemTime { tv_sec: 1769022319, tv_nsec: 714369584 })))}. Most recently modified: pyproject.toml
+DEBUG Directory source requirement already cached: uv-bug-repro==0.1.0 (from file://~/dev/tries/2026-01-21-uv-repro)
+DEBUG Registry requirement already cached: typer==0.21.1
+DEBUG Registry requirement already cached: click==8.3.1
+DEBUG Registry requirement already cached: rich==14.2.0
+DEBUG Registry requirement already cached: shellingham==1.5.4
+DEBUG Registry requirement already cached: typing-extensions==4.15.0
+DEBUG Registry requirement already cached: markdown-it-py==4.0.0
+DEBUG Registry requirement already cached: pygments==2.19.2
+DEBUG Registry requirement already cached: mdurl==0.1.2
+Installed 9 packages in 21ms
+ + click==8.3.1
+ + markdown-it-py==4.0.0
+ + mdurl==0.1.2
+ + pygments==2.19.2
+ + rich==14.2.0
+ + shellingham==1.5.4
+ + typer==0.21.1
+ + typing-extensions==4.15.0
+ + uv-bug-repro==0.1.0 (from file://~/dev/tries/2026-01-21-uv-repro)
+DEBUG Released lock at `~/dev/tries/2026-01-21-uv-repro/.venv/.lock`
+DEBUG Released lock at `~/.cache/uv/.lock`
+
+=== Step 2: uv sync --extra extra1 --verbose ===
+DEBUG uv 0.9.26 (ee4f00362 2026-01-15)
+DEBUG Acquired shared lock for `~/.cache/uv`
+DEBUG Found project root: `~/dev/tries/2026-01-21-uv-repro`
+DEBUG No workspace root found, using project root
+DEBUG Acquired exclusive lock for `~/dev/tries/2026-01-21-uv-repro`
+DEBUG No Python version file found in workspace: ~/dev/tries/2026-01-21-uv-repro
+DEBUG Using Python request `>=3.10` from `requires-python` metadata
+DEBUG Checking for Python environment at: `.venv`
+DEBUG The project environment's Python version satisfies the request: `Python >=3.10`
+DEBUG Released lock at `/var/folders/w8/q651c06s5q5dc_zqw19_98mw0000gp/T/uv-224678e4d39cbb53.lock`
+DEBUG Acquired exclusive lock for `.venv`
+DEBUG Using request timeout of 30s
+DEBUG Found static `pyproject.toml` for: uv-bug-repro @ file://~/dev/tries/2026-01-21-uv-repro
+DEBUG No workspace root found, using project root
+DEBUG Existing `uv.lock` satisfies workspace requirements
+Resolved 11 packages in 4ms
+DEBUG Using request timeout of 30s
+DEBUG Computed cache info: Timestamp(SystemTime { tv_sec: 1769022319, tv_nsec: 714323542 }), None, None, {}, {"src": Some(Timestamp(Timestamp(SystemTime { tv_sec: 1769022319, tv_nsec: 714369584 })))}. Most recently modified: pyproject.toml
+DEBUG Requirement already installed: uv-bug-repro==0.1.0 (from file://~/dev/tries/2026-01-21-uv-repro)
+DEBUG Requirement already installed: typer==0.21.1
+DEBUG Registry requirement already cached: typer-slim==0.21.1
+DEBUG Requirement already installed: click==8.3.1
+DEBUG Requirement already installed: rich==14.2.0
+DEBUG Requirement already installed: shellingham==1.5.4
+DEBUG Requirement already installed: typing-extensions==4.15.0
+DEBUG Requirement already installed: markdown-it-py==4.0.0
+DEBUG Requirement already installed: pygments==2.19.2
+DEBUG Requirement already installed: mdurl==0.1.2
+Installed 1 package in 89ms
+ + typer-slim==0.21.1
+DEBUG Released lock at `~/dev/tries/2026-01-21-uv-repro/.venv/.lock`
+DEBUG Released lock at `~/.cache/uv/.lock`
+
+=== Step 3: uv sync --extra extra2 --verbose ===
+DEBUG uv 0.9.26 (ee4f00362 2026-01-15)
+DEBUG Acquired shared lock for `~/.cache/uv`
+DEBUG Found project root: `~/dev/tries/2026-01-21-uv-repro`
+DEBUG No workspace root found, using project root
+DEBUG Acquired exclusive lock for `~/dev/tries/2026-01-21-uv-repro`
+DEBUG No Python version file found in workspace: ~/dev/tries/2026-01-21-uv-repro
+DEBUG Using Python request `>=3.10` from `requires-python` metadata
+DEBUG Checking for Python environment at: `.venv`
+DEBUG The project environment's Python version satisfies the request: `Python >=3.10`
+DEBUG Released lock at `/var/folders/w8/q651c06s5q5dc_zqw19_98mw0000gp/T/uv-224678e4d39cbb53.lock`
+DEBUG Acquired exclusive lock for `.venv`
+DEBUG Using request timeout of 30s
+DEBUG Found static `pyproject.toml` for: uv-bug-repro @ file://~/dev/tries/2026-01-21-uv-repro
+DEBUG No workspace root found, using project root
+DEBUG Existing `uv.lock` satisfies workspace requirements
+Resolved 11 packages in 3ms
+DEBUG Using request timeout of 30s
+DEBUG Computed cache info: Timestamp(SystemTime { tv_sec: 1769022319, tv_nsec: 714323542 }), None, None, {}, {"src": Some(Timestamp(Timestamp(SystemTime { tv_sec: 1769022319, tv_nsec: 714369584 })))}. Most recently modified: pyproject.toml
+DEBUG Requirement already installed: uv-bug-repro==0.1.0 (from file://~/dev/tries/2026-01-21-uv-repro)
+DEBUG Requirement already installed: typer==0.21.1
+DEBUG Requirement already installed: rich==14.2.0
+DEBUG Requirement already installed: click==8.3.1
+DEBUG Requirement already installed: shellingham==1.5.4
+DEBUG Requirement already installed: typing-extensions==4.15.0
+DEBUG Requirement already installed: markdown-it-py==4.0.0
+DEBUG Requirement already installed: pygments==2.19.2
+DEBUG Requirement already installed: mdurl==0.1.2
+DEBUG Unnecessary package: typer-slim==0.21.1
+DEBUG Uninstalled typer-slim (24 files, 3 directories)
+Uninstalled 1 package in 21ms
+ - typer-slim==0.21.1
+DEBUG Released lock at `~/dev/tries/2026-01-21-uv-repro/.venv/.lock`
+DEBUG Released lock at `~/.cache/uv/.lock`
+
+=== Step 4: uv run repro-cli ===
+Traceback (most recent call last):
+  File "~/dev/tries/2026-01-21-uv-repro/.venv/bin/repro-cli", line 4, in <module>
+    from uv_bug_repro import main
+  File "~/dev/tries/2026-01-21-uv-repro/src/uv_bug_repro/__init__.py", line 1, in <module>
+    import typer
+ModuleNotFoundError: No module named 'typer'
